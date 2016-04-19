@@ -5,41 +5,37 @@
       <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
       <h1 class="title-bar-title">J&amp;R Industrial</h1>
     </div>
-    <div class="title-bar-right">
-      <ul class="tabs" data-tabs id="example-tabs">
-        <li class="tabs-title is-active"><a href="#about" aria-selected="true">About</a></li>
-        <li class="tabs-title"><a href="#catalog">Catalog</a></li>
-        <li class="tabs-title"><a href="#specialDeals">Special Deals</a></li>
-        <li class="tabs-title"><a href="#location">Location</a>
-        </li>
-      </Ul>
-    </div>
+    <div class="title-bar-right"></div>
   </div>
 
   <div class="off-canvas-wrapper">
     <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
       <div class="off-canvas position-left reveal-for-medium" id="offCanvas" data-off-canvas>
-        <ul class="accordion" data-accordion data-allow-all-closed="true">
-          <li class="accordion-item" data-accordion-item>
-            <a href="#" class="accordion-title">Accordion 1</a>
-            <div class="accordion-content" data-tab-content>
-              {{> lorem }}
-            </div>
-          </li>
-          <li class="accordion-item" data-accordion-item>
-            <a href="#" class="accordion-title">Accordion 1</a>
-            <div class="accordion-content" data-tab-content>
-              {{> scrolltest }}
-            </div>
-          </li>
+        <ul id="tabs" class="tabs hidden" data-tabs></ul>
+        <ul id="accordion-nav" class="accordion" data-accordion data-allow-all-closed="true">
+          {{#>accordion-item href="#about" title="About"}}
+            {{> lorem }}
+          {{/accordion-item}}
+
+          {{#>accordion-item href="#catalog" title="Catalog"}}
+            {{> lorem }}
+          {{/accordion-item}}
+
+          {{#>accordion-item href="#specialDeals" title="Special Deals"}}
+            {{> lorem }}
+          {{/accordion-item}}
+
+          {{#>accordion-item href="#location" title="Location"}}
+            {{> lorem }}
+          {{/accordion-item}}
         </ul>
       </div>
 
       <div class="off-canvas-content" data-off-canvas-content>
         <div class="row">
           <div class="large 12-columns">
-            <div class="tabs-content" data-tabs-content="example-tabs">
+            <div class="tabs-content" data-tabs-content="tabs">
 
               <div class="tabs-panel is-active" id="about">
                 {{> about }}
@@ -61,5 +57,4 @@
 
     </div>
   </div>
-
 </div>

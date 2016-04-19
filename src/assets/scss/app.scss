@@ -74,6 +74,10 @@ $top-bar-height: 5rem;
     position: fixed;
 }
 
+.hidden {
+    display: none;
+}
+
 @include breakpoint(small only) {
     .off-canvas-wrapper-inner .position-left {
         top: 0px;
