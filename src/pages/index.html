@@ -12,22 +12,23 @@
     <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
       <div class="off-canvas position-left reveal-for-medium" id="offCanvas" data-off-canvas>
-        <ul id="tabs" class="tabs hidden" data-tabs></ul>
+        <ul id="tabs" class="tabs hide" data-tabs></ul>
         <ul id="accordion-nav" class="accordion" data-accordion data-allow-all-closed="true">
           {{#>accordion-item href="#about" title="About"}}
-            {{> lorem }}
+          <ul class="vertical menu">
+            <li><a href="#about-company-history">Company History</a></li>
+            <li><a href="#about-specializations">Specializations</a></li>
+            <li><a href="#about-contact-us">Contact Us</a></li>
+          </ul>
           {{/accordion-item}}
 
           {{#>accordion-item href="#catalog" title="Catalog"}}
-            {{> lorem }}
           {{/accordion-item}}
 
           {{#>accordion-item href="#specialDeals" title="Special Deals"}}
-            {{> lorem }}
           {{/accordion-item}}
 
           {{#>accordion-item href="#location" title="Location"}}
-            {{> lorem }}
           {{/accordion-item}}
         </ul>
       </div>
