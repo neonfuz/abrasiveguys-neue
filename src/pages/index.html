@@ -1,61 +1,56 @@
-<div class="frame">
-
-  <div class="title-bar">
-    <div class="title-bar-left">
-      <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
-      <h1 class="title-bar-title">J&amp;R Industrial</h1>
-    </div>
-    <div class="title-bar-right"></div>
+<div class="title-bar">
+  <div class="title-bar-left">
+    <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
+    <h1 class="title-bar-title">J&amp;R Industrial test</h1>
   </div>
+  <div class="title-bar-right"></div>
+</div>
 
-  <div class="off-canvas-wrapper">
-    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+<div class="off-canvas-wrapper">
+  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
-      <div class="off-canvas position-left reveal-for-medium" id="offCanvas" data-off-canvas>
-        <ul id="tabs" class="tabs hide" data-tabs></ul>
-        <ul id="accordion-nav" class="accordion" data-accordion data-allow-all-closed="true">
-          {{#>accordion-item href="#about" title="About"}}
+    <div class="off-canvas position-left reveal-for-medium" id="offCanvas" data-off-canvas>
+      <ul id="tabs" class="tabs hide" data-tabs></ul>
+      <ul id="accordion-nav" class="accordion" data-accordion data-allow-all-closed="true">
+        {{#>accordion-item href="#about" title="About"}}
           <ul class="vertical menu">
             <li><a href="#about-company-history">Company History</a></li>
             <li><a href="#about-specializations">Specializations</a></li>
             <li><a href="#about-contact-us">Contact Us</a></li>
           </ul>
-          {{/accordion-item}}
+        {{/accordion-item}}
 
-          {{#>accordion-item href="#catalog" title="Catalog"}}
-          {{/accordion-item}}
+        {{#>accordion-item href="#catalog" title="Catalog"}}
+        {{/accordion-item}}
 
-          {{#>accordion-item href="#specialDeals" title="Special Deals"}}
-          {{/accordion-item}}
+        {{#>accordion-item href="#specialDeals" title="Special Deals"}}
+        {{/accordion-item}}
 
-          {{#>accordion-item href="#location" title="Location"}}
-          {{/accordion-item}}
-        </ul>
-      </div>
+        {{#>accordion-item href="#location" title="Location"}}
+        {{/accordion-item}}
+      </ul>
+    </div>
 
-      <div class="off-canvas-content" data-off-canvas-content>
-        <div class="row">
-          <div class="large 12-columns">
-            <div class="tabs-content" data-tabs-content="tabs">
-
-              <div class="tabs-panel is-active" id="about">
-                {{> about }}
-              </div>
-              <div class="tabs-panel" id="catalog">
-                {{> catalog }}
-              </div>
-              <div class="tabs-panel" id="specialDeals">
-                {{> specialDeals }}
-              </div>
-              <div class="tabs-panel" id="location">
-                {{> location }}
-              </div>
-
+    <div class="off-canvas-content" data-off-canvas-content>
+      <div class="row">
+        <div class="large 12-columns">
+          <div class="tabs-content" data-tabs-content="tabs">
+            <div class="tabs-panel is-active" id="about">
+              {{> about }}
+            </div>
+            <div class="tabs-panel" id="catalog">
+              {{> catalog }}
+            </div>
+            <div class="tabs-panel" id="specialDeals">
+              {{> specialDeals }}
+            </div>
+            <div class="tabs-panel" id="location">
+              {{> location }}
             </div>
           </div>
         </div>
       </div>
-
     </div>
+
   </div>
 </div>
