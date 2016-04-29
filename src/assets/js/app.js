@@ -3,12 +3,17 @@ var tabTemplate = Handlebars.compile(
 
 // Prepare content before loading foundation modules
 $('.tabs-content').children('.tabs-panel').each(function(index, item) {
-    var element = tabTemplate({id: item.id, text: ''});
+    var element = $(tabTemplate({id: item.id, text: ''}));
 
     if( $(item).hasClass('is-active') ) {
-        $(element)
+        element
             .addClass('is-active')
             .children('a').attr('aria-selected', 'true');
+
+        var accordionItem = $('#accordion-nav')
+            .find('a[href$="#' + $(item).attr('id') + '"]');
+        accordionItem.parent().addClass('is-active');
+        accordionItem.attr('aria-selected', 'true');
     }
 
     $('#tabs').append(element);
