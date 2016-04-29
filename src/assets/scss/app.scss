@@ -49,29 +49,39 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
-$top-bar-height: 5rem;
+
+@import 'site/resources';
+@import 'site/styling';
+@import 'site/main-layout';
+
+$top-bar-height: 10rem;
+$top-bar-padding: 1rem;
 
 .title-bar {
     height: $top-bar-height;
     overflow: hidden;
-}
+    color: black;
+    background: #C49490;
+    padding: $top-bar-padding;
 
-body {
-    box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    .logo {
+        height: calc( #{$top-bar-height} - #{$top-bar-padding} * 2);
+    }
 }
 
 .off-canvas-wrapper-inner {
     height: calc(100vh - #{$top-bar-height} );
 
-    .off-canvas {
-        top: $top-bar-height;
-        height: calc(100vh - #{$top-bar-height} );
-        position: fixed;
-    }
+.off-canvas {
+    top: $top-bar-height !important;
+    height: calc(100vh - #{$top-bar-height} );
+    position: fixed;
 }
+}
+
+/*#leftBar {
+    top: $top-bar-height !important;
+}*/
 
 @include breakpoint(small only) {
     .off-canvas-wrapper-inner .position-left {
@@ -79,7 +89,85 @@ body {
         height: auto;
     }
 }
-
 .menu-icon {
     @include hide-for(medium);
+}
+
+main {
+    section {
+        margin-left: 2rem;
+    }
+    h2 {
+        padding-bottom: .5rem;
+    }
+}
+
+
+
+#offCanvas {
+    background: #AF6B6B;
+}
+
+.accordion {
+
+    background: black;
+    border: 1px solid black;
+
+    .accordion-item {
+
+        font-family: bebas;
+
+        .accordion-title {
+            font-size: 1rem;
+            background: #704141;
+        }
+        .accordion-content {
+            background: #AF6B6B;
+        }
+        a {
+            color: black;
+        }
+    }
+}
+
+#google-map {
+    height: calc( 100vh - #{$top-bar-height} - 2rem );
+}
+
+#contact {
+    h2 {
+        font-size: 1.5rem;
+        float: left;
+    }
+
+    a {
+        color: black;
+    }
+
+    line-height: 0;
+    /* Description list tables */
+    dt {
+        float: left;
+        clear: left;
+        width: 80px;
+        text-align: right;
+        font-family: bebas;
+    }
+    dt:after {
+        content: ":";
+    }
+    dd {
+        margin: 0 0 0 85px;
+        padding: 0.1rem 0 0.2rem 0;
+        text-align: left;
+    }
+    dl {
+        margin: 0;
+    }
+
+    /* Center the content vertically */
+    height: calc( #{$top-bar-height} - #{$top-bar-padding} * 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

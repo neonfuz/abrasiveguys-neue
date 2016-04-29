@@ -1,9 +1,23 @@
 <div class="title-bar">
   <div class="title-bar-left">
     <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
-    <h1 class="title-bar-title">J&amp;R Industrial test</h1>
+    <img class="logo" alt="J&amp;R Industrial" src="assets/img/dark_logo.svg"/>
+    <!-- <h1 class="title-bar-title">J&amp;R Industrial</h1> -->
   </div>
-  <div class="title-bar-right"></div>
+  <div class="title-bar-right">
+    <section id="contact">
+      <dl>
+        <dt>Mail</dt>
+        <dd><a href="https://goo.gl/maps/yw3DPPrhRbN2">4929 N Lydell Ave, Glendale, WI 53217</a></dd>
+        <dt>Email</dt>
+        <dd><a href="mailto:chris@abrasiveguys.com">Chris@AbrasiveGuys.com</a></dd>
+        <dt>Phone</dt>
+        <dd><a href="tel:+14144450200">(414) 445-0200</a></dd>
+        <dt>Fax</dt>
+        <dd>(414) 445-0567</dd>
+      </dl>
+    </section>
+  </div>
 </div>
 
 <div class="off-canvas-wrapper">
@@ -31,9 +45,9 @@
       </ul>
     </div>
 
-    <div class="off-canvas-content" data-off-canvas-content>
-      <div class="row">
-        <div class="large 12-columns">
+    <main class="off-canvas-content" data-off-canvas-content>
+      <div class="expanded row">
+        <div class="large-12 columns">
           <div class="tabs-content" data-tabs-content="tabs">
             <div class="tabs-panel is-active" id="about">
               {{> about }}
@@ -50,7 +64,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
   </div>
 </div>
