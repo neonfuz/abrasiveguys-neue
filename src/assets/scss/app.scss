@@ -115,14 +115,25 @@ main {
 
     .accordion-item {
 
+/*        font-family: bebas;
+        word-spacing: .2em;
+        line-height: 2em !important;*/
+
         font-family: bebas;
+        word-spacing: .2em;
 
         .accordion-title {
             font-size: 1rem;
             background: #704141;
+
         }
         .accordion-content {
             background: #AF6B6B;
+
+            // Style the text of the items
+            .menu > li > a {
+                line-height: 1.2em;
+            }
         }
         a {
             color: black;
