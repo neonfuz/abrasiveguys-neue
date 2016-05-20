@@ -1,0 +1,111 @@
+@import 'resources'
+@import 'colors'
+@import 'styling'
+@import 'main-layout'
+
+$top-bar-height: 10rem
+$top-bar-padding: 1rem
+
+.title-bar
+  height: $top-bar-height
+  overflow: hidden
+  color: black
+  background: $top-bar-color
+  padding: $top-bar-padding
+
+  .logo
+    height: calc( #{$top-bar-height} - #{$top-bar-padding} * 2)
+
+.off-canvas-wrapper-inner
+  height: calc(100vh - #{$top-bar-height} )
+
+  .off-canvas
+    top: $top-bar-height !important
+    height: calc(100vh - #{$top-bar-height} )
+    position: fixed
+
+//#leftBar {
+//    top: $top-bar-height !important
+//}
+
+@include breakpoint(small only)
+  .off-canvas-wrapper-inner .position-left
+    top: 0px
+    height: auto
+
+.menu-icon
+  @include hide-for(medium)
+
+main
+  section
+    margin-left: 2rem
+  h2
+    padding-bottom: .5rem
+
+#offCanvas
+  background: $side-bar-color
+
+.accordion
+  background: black
+  border: 0
+
+  .accordion-item
+
+    font-family: bebas
+    word-spacing: .2em
+
+    .accordion-title
+      font-size: 1rem
+      background: $accordion-title-color
+    .accordion-content
+      background: $accordion-content-color
+      .menu > li > a
+        line-height: 1.2em
+    a
+      color: black
+
+#google-map
+  height: calc( 100vh - #{$top-bar-height} - 2rem )
+
+#contact
+  h2
+    font-size: 1.5rem
+    float: left
+
+  a
+    color: black
+    text-decoration: underline
+
+  line-height: 0
+  /* Description list tables */
+  dt
+    float: left
+    clear: left
+    width: 80px
+    text-align: right
+    font-family: bebas
+
+  dt:after
+    content: ":"
+  dd
+    margin: 0 0 0 85px
+    padding: 0.1rem 0 0.2rem 0
+    text-align: left
+
+  dl
+    margin: 0
+
+  /* Center the content vertically */
+  height: calc( #{$top-bar-height} - #{$top-bar-padding} * 2)
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+// TODO: remove if we don't go with light theme
+#contact.light
+  color: #cfd8db
+  a
+    color: #cfd8db
+
+.off-canvas-content, .tabs-content
+  background: #cfd8db
