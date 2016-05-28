@@ -3,3 +3,20 @@ body
   width: 100vw
   height: 100vh
   overflow: hidden
+
+$top-bar-height: 10rem
+$top-bar-padding: 1rem
+
+.title-bar
+  overflow: hidden
+  color: black
+  background: $top-bar-color
+  padding: $top-bar-padding
+  @include breakpoint(medium)
+    height: $top-bar-height
+
+  .logo
+    @include breakpoint(medium)
+      height: calc( #{$top-bar-height} - #{$top-bar-padding} * 2)
+    @include breakpoint(small only)
+      width: calc( 100vw - #{$top-bar-padding} * 2 - 4em )

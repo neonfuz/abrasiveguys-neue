@@ -56,3 +56,7 @@ $('#accordion-nav').children('.accordion-item').click(function() {
         window.location.hash = href;
 });
 
+$('#accordion-nav').children('.accordion-item').find('li').click(function() {
+    if(Foundation.MediaQuery.current === 'small')
+        $('#offCanvas').foundation('close');
+});
