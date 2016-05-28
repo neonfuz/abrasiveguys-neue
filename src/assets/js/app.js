@@ -22,16 +22,6 @@ $('.tabs-content').children('.tabs-panel').each(function(index, item) {
 // Load all foundation models
 $(document).foundation();
 
-$('#accordion-nav').children('.accordion-item').click(function() {
-    var href = $(this).children('a').attr('href').substr(1);
-    $('#tabs').foundation('selectTab', href);
-
-    if(history.pushState)
-        history.pushState(null, null, '#' + href);
-    else
-        window.location.hash = href;
-});
-
 function addMap(selector, center, zoom, title) {
     var map = new google.maps.Map($(selector).get()[0], {
         center: center,
@@ -48,13 +38,21 @@ function addMap(selector, center, zoom, title) {
     return map;
 }
 
-var center = {lat: 43.107064, lng: -87.912658};
+function initMap() {
+  var center = {lat: 43.106774, lng: -87.912205};
+  var map = addMap('#google-map', center, 17, 'J&R Industrial');
+}
 
-var map = addMap('#google-map', center, 17, 'J&R Industrial');
+$('#accordion-nav').children('.accordion-item').click(function() {
+    var href = $(this).children('a').attr('href').substr(1);
+    $('#tabs').foundation('selectTab', href);
 
-// Google maps will refuse to render properly until resized for some reason.
-// This resizes the map as soon as it renders to fix this.
-// TODO: better fix for this
-google.maps.event.addListenerOnce(map, 'idle', function() {
-    google.maps.event.trigger(map, 'resize');
+    if(href==="location")
+        initMap();
+
+    if(history.pushState)
+        history.pushState(null, null, '#' + href);
+    else
+        window.location.hash = href;
 });
+
