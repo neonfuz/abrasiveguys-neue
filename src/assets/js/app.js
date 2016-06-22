@@ -1,3 +1,5 @@
+'use strict';
+
 var tabTemplate = Handlebars.compile(
     '<li class="tabs-title"><a href="#{{id}}">{{text}}</a></li>');
 
