@@ -84,7 +84,9 @@ function sass() {
     .pipe($.autoprefixer({
       browsers: COMPATIBILITY
     }))
-    .pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
+  // HACK: this breaks sidebar css, so we're disabling it.
+  // We need to figure out why css is breaking, probably because of dynamic content.
+//    .pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
     .pipe($.if(PRODUCTION, $.cssnano()))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + '/assets/css'))
