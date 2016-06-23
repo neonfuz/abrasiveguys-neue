@@ -1,8 +1,9 @@
-body
-  box-sizing: border-box
-  width: 100vw
-  height: 100vh
-  overflow: hidden
+@include breakpoint(medium)
+  body
+    box-sizing: border-box
+    width: 100vw
+    height: 100vh
+    overflow: hidden
 
 $top-bar-height: 10rem
 $top-bar-padding: 1rem
@@ -20,3 +21,23 @@ $top-bar-padding: 1rem
       height: calc( #{$top-bar-height} - #{$top-bar-padding} * 2)
     @include breakpoint(small only)
       width: calc( 100vw - #{$top-bar-padding} * 2 - 4em )
+
+@include breakpoint(small only)
+  .off-canvas-wrapper-inner .position-left
+    top: 0px
+    height: auto
+
+@include breakpoint(medium)
+  .off-canvas-wrapper
+    overflow: hidden
+    .off-canvas-wrapper-inner
+      .off-canvas
+        position: fixed
+        height: calc(100vh - #{$top-bar-height} )
+        top: $top-bar-height
+      .off-canvas-content
+        overflow-y: auto
+        height: calc(100vh - #{$top-bar-height} )
+
+.menu-icon
+  @include hide-for(medium)

@@ -5,25 +5,8 @@
 
 @import 'catalog'
 
-.off-canvas-wrapper
-  overflow: hidden
-  .off-canvas-wrapper-inner
-    .off-canvas
-      position: fixed
-      height: calc(100vh - #{$top-bar-height} )
-      @include breakpoint(medium)
-        top: $top-bar-height
-    .off-canvas-content
-      overflow-y: auto
-      height: calc(100vh - #{$top-bar-height} )
-
-@include breakpoint(small only)
-  .off-canvas-wrapper-inner .position-left
-    top: 0px
-    height: auto
-
-.menu-icon
-  @include hide-for(medium)
+body
+  background: $light-red
 
 #offCanvas
   background: $side-bar-color
